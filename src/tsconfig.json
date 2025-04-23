@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
-        "isolatedModules": true
+        "isolatedModules": true,
+        "moduleResolution": "Bundler"
     },
     "extends": "tsconfig-holy-grail/src/tsconfig-browser"
 }

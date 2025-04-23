@@ -1,11 +1,7 @@
 import { TNativeAudioBufferConstructorFactory } from '../types';
 
 export const createNativeAudioBufferConstructor: TNativeAudioBufferConstructorFactory = (window) => {
-    if (window === null) {
-        return null;
-    }
-
-    if (window.hasOwnProperty('AudioBuffer')) {
+    if (window && window.hasOwnProperty('AudioBuffer')) {
         return window.AudioBuffer;
     }
 

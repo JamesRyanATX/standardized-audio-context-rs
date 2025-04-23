@@ -1,3 +1,9 @@
 import { TWindow, TWindowFactory } from '../types';
+import * as WebAudioApi from 'isomorphic-web-audio-api';
 
-export const createWindow: TWindowFactory = () => (typeof window === 'undefined' ? null : <TWindow>window);
+const shenanigans = {
+    ...WebAudioApi,
+    hasOwnProperty: (prop: string) => prop in WebAudioApi
+};
+
+export const createWindow: TWindowFactory = () => <TWindow>shenanigans;

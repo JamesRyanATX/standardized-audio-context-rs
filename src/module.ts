@@ -851,3 +851,65 @@ export const isSupported = () =>
         createTestStereoPannerNodeDefaultValueSupport(nativeOfflineAudioContextConstructor),
         testTransferablesSupport
     );
+
+export const createCompatibilityTests = () => ({
+    createTestAudioBufferConstructorSupport: createTestAudioBufferConstructorSupport(nativeAudioBufferConstructor),
+    createTestAudioBufferCopyChannelMethodsOutOfBoundsSupport: createTestAudioBufferCopyChannelMethodsOutOfBoundsSupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestAudioBufferCopyChannelMethodsSubarraySupport: createTestAudioBufferCopyChannelMethodsSubarraySupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestAudioBufferSourceNodeBufferReassignmentSupport: createTestAudioBufferSourceNodeBufferReassignmentSupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestAudioBufferFactoryMethodSupport: createTestAudioBufferFactoryMethodSupport(nativeOfflineAudioContextConstructor),
+    createTestAudioContextCloseMethodSupport: createTestAudioContextCloseMethodSupport(nativeAudioContextConstructor),
+    createTestAudioContextDecodeAudioDataMethodTypeErrorSupport: createTestAudioContextDecodeAudioDataMethodTypeErrorSupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestAudioContextOptionsSupport: createTestAudioContextOptionsSupport(nativeAudioContextConstructor),
+    createTestAudioContextResumeSupport: createTestAudioContextResumeSupport(nativeAudioContextConstructor),
+    createTestAudioNodeConnectMethodChainabilitySupport: createTestAudioNodeConnectMethodChainabilitySupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestAudioNodeConnectMethodVerificationSupport: createTestAudioNodeConnectMethodVerificationSupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestAudioParamValueSetterSupport: createTestAudioParamValueSetterSupport(nativeOfflineAudioContextConstructor),
+    createTestAudioWorkletAddModuleMethodSupport: createTestAudioWorkletAddModuleMethodSupport(nativeOfflineAudioContextConstructor),
+    createTestAudioWorkletNodeConstructorSupport: createTestAudioWorkletNodeConstructorSupport(
+        isSecureContext,
+        nativeAudioWorkletNodeConstructor
+    ),
+    createTestAudioWorkletProcessorNoInputsSupport: createTestAudioWorkletProcessorNoInputsSupport(
+        nativeAudioWorkletNodeConstructor,
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestAudioWorkletProcessorNoOutputsSupport: createTestAudioWorkletProcessorNoOutputsSupport(
+        nativeAudioWorkletNodeConstructor,
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestBiquadFilterNodeGetFrequencyResponseMethodSupport: createTestBiquadFilterNodeGetFrequencyResponseMethodSupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestChannelMergerNodeChannelCountSupport: createTestChannelMergerNodeChannelCountSupport(nativeOfflineAudioContextConstructor),
+    createTestConstantSourceNodeAccurateSchedulingSupport: createTestConstantSourceNodeAccurateSchedulingSupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestConvolverNodeBufferReassignabilitySupport: createTestConvolverNodeBufferReassignabilitySupport(
+        nativeOfflineAudioContextConstructor
+    ),
+    createTestConvolverNodeChannelCountSupport: createTestConvolverNodeChannelCountSupport(nativeOfflineAudioContextConstructor),
+    testDomExceptionConstructorSupport: testDomExceptionConstructorSupport,
+    testErrorEventErrorPropertySupport: testErrorEventErrorPropertySupport,
+    createTestIsSecureContextSupport: createTestIsSecureContextSupport(window),
+    createTestMediaStreamAudioSourceNodeMediaStreamWithoutAudioTrackSupport:
+        createTestMediaStreamAudioSourceNodeMediaStreamWithoutAudioTrackSupport(nativeAudioContextConstructor),
+    createTestPeriodicWaveConstructorSupport: createTestPeriodicWaveConstructorSupport(
+        nativeOfflineAudioContextConstructor,
+        createNativePeriodicWaveConstructor(window)
+    ),
+    createTestStereoPannerNodeDefaultValueSupport: createTestStereoPannerNodeDefaultValueSupport(nativeOfflineAudioContextConstructor),
+    testTransferablesSupport: testTransferablesSupport
+});

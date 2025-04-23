@@ -21,6 +21,7 @@
     "dependencies": {
         "@babel/runtime": "^7.27.0",
         "automation-events": "^7.1.9",
+        "isomorphic-web-audio-api": "^1.0.2",
         "tslib": "^2.8.1"
     },
     "description": "A cross-browser wrapper for the Web Audio API which aims to closely follow the standard.",
@@ -106,7 +107,7 @@
         "test:expectation-safari-penultimate": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"expectation\" ] && [ \"$TARGET\" = \"\" -o \"$TARGET\" = \"safari-penultimate\" ]; then karma start config/karma/config-expectation-safari-penultimate.js --single-run; fi",
         "test:expectation-safari-previous": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"expectation\" ] && [ \"$TARGET\" = \"\" -o \"$TARGET\" = \"safari-previous\" ]; then karma start config/karma/config-expectation-safari-previous.js --single-run; fi",
         "test:integration-browser": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"integration\" ] && [ \"$TARGET\" = \"\" -o \"$TARGET\" = \"chrome\" -o \"$TARGET\" = \"firefox\" -o \"$TARGET\" = \"safari\" ]; then karma start config/karma/config-integration.js --single-run; fi",
-        "test:integration-node": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"integration\" ] && [ \"$TARGET\" = \"\" -o \"$TARGET\" = \"node\" ]; then mocha --bail --parallel --recursive --require config/mocha/config-integration.js test/integration; fi",
+        "test:integration-node": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"integration\" ] && [ \"$TARGET\" = \"\" -o \"$TARGET\" = \"node\" ]; then mocha --bail --check-leaks --allow-uncaught --recursive --exit --require config/mocha/config-integration.js test/integration; fi",
         "test:memory": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"memory\" ]; then mocha --bail --parallel --recursive --require config/mocha/config-memory.js test/memory; fi",
         "test:unit": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"unit\" ]; then karma start config/karma/config-unit.js --single-run; fi"
     },

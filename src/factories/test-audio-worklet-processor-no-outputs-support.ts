@@ -8,6 +8,7 @@ export const createTestAudioWorkletProcessorNoOutputsSupport: TTestAudioWorkletP
     nativeAudioWorkletNodeConstructor,
     nativeOfflineAudioContextConstructor
 ) => {
+
     return async () => {
         if (nativeAudioWorkletNodeConstructor === null) {
             return false;
